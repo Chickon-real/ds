@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.flex {
+    display: flex;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.p-24 {
+    padding: 6rem;
+}
+
+.typewriter-text {
+    display: inline;
+    font-size: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid orange; /* Cursor effect */
+}
+
+.cursor {
+    display: inline-block;
+    width: 1ch;
+    border-right: 0.02em solid white;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}

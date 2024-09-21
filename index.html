@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+    <link rel="stylesheet" href="dscss.css">
+</head>
+<body>
+    <main class="flex min-h-screen flex-col items-center justify-center p-24">
+        <div class="typewriter-text">
+            <span class="cursor"></span>
+        </div>
+    </main>
+    
+    <script>
+        const textElement = document.querySelector('.typewriter-text');
+        const messages = ["hello, i'm alex", "I like game photography and cycling :D"];
+        let currentMessage = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+
+        function type() {
+            const current = messages[currentMessage];
+            if (isDeleting) {
+                currentChar--;
+                if (currentChar <= 0) {
+                    isDeleting = false;
+                    currentMessage = (currentMessage + 1) % messages.length;
+                }
+            } else {
+                currentChar++;
+                if (currentChar >= current.length) {
+                    isDeleting = true;
+                }
+            }
+            textElement.innerHTML = current.substring(0, currentChar);
+            setTimeout(type, isDeleting ? 100 : 200);
+        }
+
+        document.addEventListener("DOMContentLoaded", type);
+    </script>
+</body>
+</html>
