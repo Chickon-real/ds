@@ -31,14 +31,4 @@
             } else {
                 currentChar++;
                 if (currentChar >= current.length) {
-                    isDeleting = true;
-                }
-            }
-            textElement.innerHTML = current.substring(0, currentChar);
-            setTimeout(type, isDeleting ? 100 : 200);
-        }
-
-        document.addEventListener("DOMContentLoaded", type);
-    </script>
-</body>
-</html>
+                    isDeleting = true
